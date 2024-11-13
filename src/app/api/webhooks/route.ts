@@ -11,7 +11,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(req: Request) {
   try {
     const body = await req.text()
-    const signature = (await headers()).get('stripe-signature')
+    const signature = headers().get('stripe-signature') as string
 
     if (!signature) {
       return new Response('Invalid signature', { status: 400 })
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
         userId: null,
         orderId: null,
       }
-
+      console.log(orderId);
       if (!userId || !orderId) {
         throw new Error('Invalid request metadata')
       }
@@ -72,7 +72,7 @@ export async function POST(req: Request) {
       })
 
       await resend.emails.send({
-        from: 'Snapcase <sajidhamohammed321@gmail.com>',
+        from: 'SnapCase <sajidhamohammed321@gmail.com>',
         to: [event.data.object.customer_details.email],
         subject: 'Thanks for your order!',
         react: OrderReceivedEmail({

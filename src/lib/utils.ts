@@ -34,6 +34,7 @@ export function constructMetadata({
       description,
       images: [{ url: image}]
     },
-    icons
+    icons,
+    metadataBase: new URL("https://snapcase-pied.vercel.app/")
   }
 }

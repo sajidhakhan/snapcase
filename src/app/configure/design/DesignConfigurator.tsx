@@ -27,7 +27,7 @@ import { BASE_PRICE } from '@/config/products'
 import { useUploadThing } from '@/lib/uploadthing'
 import { useToast } from "@/hooks/use-toast"
 import { useMutation } from '@tanstack/react-query'
-import { saveConfig as _saveConfig, SaveConfigArgs } from './action'
+import { saveConfig as _saveConfig, SaveConfigArgs } from './actions'
 import { useRouter } from 'next/navigation'
 
 interface DesignConfiguratorProps {

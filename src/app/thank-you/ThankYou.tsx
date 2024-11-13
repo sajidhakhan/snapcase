@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import { getPaymentStatus } from './action'
+import { getPaymentStatus } from './actions'
 import { useSearchParams } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
 import PhonePreview from '@/components/PhonePreview'
